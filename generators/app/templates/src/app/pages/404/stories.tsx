@@ -14,6 +14,6 @@ export const scenes = {
 
 storyBuilder(
   scenes,
-  'pages/_404',
+  'pages/404',
   Template,
 );

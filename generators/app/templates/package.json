@@ -69,9 +69,9 @@
     "yaml": "^1.7.2"
   },
   "devDependencies": {
-    "@pollyjs/core": "^2.6.3",
-    "@storybook/addon-knobs": "^5.2.6",
-    "@storybook/react": "^5.2.6",
+    "@storybook/addon-knobs": "5.3.5",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "5.3.5",
     "@testing-library/react": "^9.3.2",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",

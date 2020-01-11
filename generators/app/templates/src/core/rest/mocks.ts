@@ -1,6 +1,7 @@
 import * as Types from './types';
 
 export const mockUrl: string = 'https://api.nowhere.noplace';
+export const mockApiKey: string = 'abcdefghijklmnopqrstuvwxyz';
 
 export type MockResponseType = 'array' | 'object';
 

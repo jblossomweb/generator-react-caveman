@@ -26,13 +26,22 @@ import {
 
 class <%= serviceClass %> implements ServiceInterface {
   private apiUrl: string;
+<% if (serviceApiKey) { -%>
+  private apiKey: string;
+<% } -%>
   private rest: ServiceRestInterface;
 
   constructor (
     apiUrl: string,
+<% if (serviceApiKey) { -%>
+    apiKey: string,
+<% } -%>
     rest: ServiceRestInterface,
   ) {
     this.apiUrl = apiUrl;
+<% if (serviceApiKey) { -%>
+    this.apiKey = apiKey;
+<% } -%>
     this.rest = rest;
   }<% restMethods.forEach(method => { -%>
 <% const restUtil = restUtils.find(util => util.verb === method.verb) %>
@@ -47,12 +56,19 @@ class <%= serviceClass %> implements ServiceInterface {
   ) {
     const headers = {
       'Content-Type': 'application/json',
+<% if (serviceApiKey && serviceApiKeyLocation === 'header') { -%>
+      '<%= serviceApiKeyVar %>': `${this.apiKey}`,
+<% } -%>
 <% if (method.token) { -%>
       'Authorization': `Bearer ${token}`,
 <% } -%>
     };
     const endpoint = `/<%= method.endpoint %>`;
+<% if (serviceApiKey && serviceApiKeyLocation === 'queryString') { -%>
+    const url = `${this.apiUrl}${endpoint}?<%= serviceApiKeyVar %>=${this.apiKey}`;
+<% } else { -%>
     const url = `${this.apiUrl}${endpoint}`;
+<% } -%>
 <% if (method.bodyArg) { -%>
     const body = <%= method.bodyArg %>;
 <% } -%>

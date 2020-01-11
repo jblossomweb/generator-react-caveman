@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 
 import Template from 'app/templates/LightCentered';
 
-const Page404: React.FC = () => (
+export default () => (
   <Template>
     <p>Sorry! That page was not found.</p>
     <p>
@@ -16,5 +16,3 @@ const Page404: React.FC = () => (
     </p>
   </Template>
 );
-
-export default Page404;

@@ -211,6 +211,11 @@ module.exports = class extends Generator {
         yosay(`${chalk.green("you are all set!")}\n${chalk.yellow("Below is a list of available subgenerators:")}`)
       );
       this.log(chalk.cyan("yo react-caveman:service"));
+      this.log(chalk.cyan("yo react-caveman:store"));
+      // this.log(chalk.cyan("yo react-caveman:action"));
+
+      // this.log(chalk.cyan("yo react-caveman:component"));
+      // this.log(chalk.cyan("yo react-caveman:page"));
     });
   }
 };

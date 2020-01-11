@@ -26,10 +26,15 @@ const spies = {
 <% }) -%>
 }
 
-const mockService = new <%= serviceClass %>(restMocks.mockUrl, mockRest);
+<% if (serviceApiKey) { -%>
+const mockService = new <%= serviceClass %>(restMocks.mockUrl, restMocks.mockApiKey, mockRest);
+<% } else { -%>
+  const mockService = new <%= serviceClass %>(restMocks.mockUrl, mockRest);
+<% } -%>
 
 describe('services/<%= serviceCamel %>', () => {
 <% restMethods.forEach(({ name, verb, args, bodyArg, token, endpoint }) => { -%>
+
   describe('<%= name %>', () => {
 <% if (token) { -%>
     const mockToken = 'abcdefghijklmnopqrstuvwxyz123456789'; // TODO: use mock token response json

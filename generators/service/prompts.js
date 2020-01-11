@@ -12,6 +12,47 @@ module.exports = {
       message: "What type of service?",
       choices: ["rest"], // TODO: graph", "other"],
       default: "rest"
+    },
+    {
+      type: "confirm",
+      name: "hasUrl",
+      message: "Do you want to add a service URL to .env and config?",
+      default: false
+    }
+  ],
+  serviceUrl: [
+    {
+      type: "input",
+      name: "serviceUrl",
+      message: "What is the base service URL for the dev env?",
+      default: "https://api.nowhere.com"
+    },
+    {
+      type: "confirm",
+      name: "hasApiKey",
+      message: "Do you want to add a service api key to .env and config?",
+      default: false
+    }
+  ],
+  serviceApiKey: [
+    {
+      type: "input",
+      name: "serviceApiKey",
+      message: "What is the API Key for the dev env? (do not commit to git)",
+      default: "abcdefg12345"
+    },
+    {
+      type: "list",
+      name: "serviceApiKeyLocation",
+      message: "Where does the api key go?",
+      choices: ["header", "queryString"],
+      default: "header"
+    },
+    {
+      type: "input",
+      name: "serviceApiKeyVar",
+      message: "What is the header or queryString var name?",
+      default: "api_key"
     }
   ],
   addMethod: [
@@ -27,7 +68,7 @@ module.exports = {
       type: "list",
       name: "restVerb",
       message: "Which REST verb does this method use?",
-      choices: [ "get", "post", "put", "patch", "delete"],
+      choices: ["get", "post", "put", "patch", "delete"],
       default: "get"
     },
     {

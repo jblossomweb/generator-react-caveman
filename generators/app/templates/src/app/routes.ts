@@ -1,7 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 import { SemanticICONS } from 'semantic-ui-react';
 
-import Page404 from 'app/pages/_404';
+import Page404 from 'app/pages/404';
 import HomePage from 'app/pages/HomePage';
 
 export interface Route {
