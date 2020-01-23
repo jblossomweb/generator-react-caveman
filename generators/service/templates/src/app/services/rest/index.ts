@@ -26,20 +26,20 @@ import {
 
 class <%= serviceClass %> implements ServiceInterface {
   private apiUrl: string;
-<% if (serviceApiKey) { -%>
+<% if (typeof serviceApiKey !== 'undefined') { -%>
   private apiKey: string;
 <% } -%>
   private rest: ServiceRestInterface;
 
   constructor (
     apiUrl: string,
-<% if (serviceApiKey) { -%>
+<% if (typeof serviceApiKey !== 'undefined') { -%>
     apiKey: string,
 <% } -%>
     rest: ServiceRestInterface,
   ) {
     this.apiUrl = apiUrl;
-<% if (serviceApiKey) { -%>
+<% if (typeof serviceApiKey !== 'undefined') { -%>
     this.apiKey = apiKey;
 <% } -%>
     this.rest = rest;
@@ -56,7 +56,7 @@ class <%= serviceClass %> implements ServiceInterface {
   ) {
     const headers = {
       'Content-Type': 'application/json',
-<% if (serviceApiKey && serviceApiKeyLocation === 'header') { -%>
+<% if (typeof serviceApiKey !== 'undefined' && serviceApiKeyLocation === 'header') { -%>
       '<%= serviceApiKeyVar %>': `${this.apiKey}`,
 <% } -%>
 <% if (method.token) { -%>
@@ -64,7 +64,7 @@ class <%= serviceClass %> implements ServiceInterface {
 <% } -%>
     };
     const endpoint = `/<%= method.endpoint %>`;
-<% if (serviceApiKey && serviceApiKeyLocation === 'queryString') { -%>
+<% if (typeof serviceApiKey !== 'undefined' && serviceApiKeyLocation === 'queryString') { -%>
     const url = `${this.apiUrl}${endpoint}?<%= serviceApiKeyVar %>=${this.apiKey}`;
 <% } else { -%>
     const url = `${this.apiUrl}${endpoint}`;

@@ -26,7 +26,7 @@ const spies = {
 <% }) -%>
 }
 
-<% if (serviceApiKey) { -%>
+<% if (typeof serviceApiKey !== 'undefined') { -%>
 const mockService = new <%= serviceClass %>(restMocks.mockUrl, restMocks.mockApiKey, mockRest);
 <% } else { -%>
   const mockService = new <%= serviceClass %>(restMocks.mockUrl, mockRest);
