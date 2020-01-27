@@ -3,7 +3,7 @@ import React from 'react';
 import { KnobsInterface, storyBuilder } from 'core/stories';
 import Template from 'app/templates/LightCentered';
 
-import ExternalLink, { Props } from '.';
+import ExternalLink, { Props } from './ExternalLink';
 
 
 export const mockProps: Props = {

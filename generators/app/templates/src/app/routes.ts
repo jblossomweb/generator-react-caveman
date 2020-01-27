@@ -1,5 +1,5 @@
 import { SemanticICONS } from 'semantic-ui-react';
-import { Route as CoreRoute } from 'core/routes';
+import { Redirect, Route as CoreRoute } from 'core/routes';
 
 import Page404 from 'app/pages/404';
 import HomePage from 'app/pages/HomePage';

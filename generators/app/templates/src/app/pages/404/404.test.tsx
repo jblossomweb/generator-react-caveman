@@ -4,8 +4,8 @@ import { Button } from 'semantic-ui-react';
 
 import { getTestScenes, mountScenes } from 'core/test';
 import LightCentered from 'app/templates/LightCentered';
-import { scenes } from './stories';
-import Page404 from './';
+import { scenes } from './404.stories';
+import Page404 from './404';
 
 const testScenes = getTestScenes(
   mountScenes(scenes),
