@@ -1,19 +1,11 @@
-import { RouteProps } from 'react-router-dom';
 import { SemanticICONS } from 'semantic-ui-react';
+import { Route as CoreRoute } from 'core/routes';
 
 import Page404 from 'app/pages/404';
 import HomePage from 'app/pages/HomePage';
 
-export interface Route {
-  path: string,
-  page: RouteProps['component'],
-  title?: string,
+export interface Route extends CoreRoute {
   icon?: SemanticICONS,
-};
-
-export interface Redirect {
-  from?: string,
-  to: string,
 };
 
 export const menu: Route[] = [
