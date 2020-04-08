@@ -44,7 +44,7 @@ export const getInitialState: () => AppState = () => loadState() || Map(fromJS({
 const getEnhancers = () => {
   const enhancers: StoreEnhancer[] = []
   if (config.app_environment !== 'prod') {
-    const devToolsExtension: () => StoreEnhancer = windowOrGlobal.__REDUX_DEVTOOLS_EXTENSION__;
+    const devToolsExtension: () => StoreEnhancer = (windowOrGlobal as any).__REDUX_DEVTOOLS_EXTENSION__;
     if (typeof devToolsExtension === 'function') {
       enhancers.push(devToolsExtension());
     }
