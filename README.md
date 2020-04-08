@@ -24,6 +24,8 @@ npm install -g generator-react-caveman
 Then generate your new project:
 
 ```bash
+mkdir my-new-app
+cd my-new-app
 yo react-caveman
 ```
 
