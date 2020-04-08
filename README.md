@@ -3,7 +3,18 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-react-caveman using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+Note: this is still under construction, and has not yet been submitted to the NPM repository.
+
+So first, you will want to set up a local npm link. Clone this repository, install its dependencies, then link it.
+
+```bash
+git clone https://github.com/jblossomweb/generator-react-caveman.git
+cd generator-react-caveman
+npm install
+npm link
+```
+
+Next, install [Yeoman](http://yeoman.io) and generator-react-caveman using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
